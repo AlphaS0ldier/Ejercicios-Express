@@ -1,0 +1,17 @@
+#generar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    flex-direction: column;
+    text-align: center;
+}
+
+#generar button{
+    margin-bottom: 50px;
+}
+
+#generar table{
+    width: 30%;
+    border: 1px solid gray;
+}

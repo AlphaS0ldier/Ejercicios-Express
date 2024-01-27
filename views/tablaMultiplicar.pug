@@ -1,0 +1,11 @@
+extends layout
+
+block content 
+    link(rel='stylesheet', href='/stylesheets/tablaMultiplicar.css')
+    h1 Tabla de multiplicar
+    form(action='/tablaMultiplicar' method='post')
+        div
+            label &iquest;Base de multiplicaci&oacute;n?
+            input(type='text' name='base')
+        div
+        input(type='submit' value='Enviar')

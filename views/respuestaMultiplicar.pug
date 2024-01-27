@@ -1,0 +1,19 @@
+extends layout 
+
+block content
+    link(rel='stylesheet', href='/stylesheets/tablaMultiplicar.css')
+    div
+      if resultados.length>0
+        table
+            thead
+                th Base
+                th X
+                th Resultado
+            tbody
+                each resultado in resultados
+                    tr
+                        each result in resultado
+                                td=result
+      else
+        p VALOR NO VÁLIDO
+

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    div(id="generar")
+        button.btn.btn-secondary(type='button') Generar Quinela
+        table(class="table table-striped")
+            tbody#tbody
+
+    script(src="/socket.io/socket.io.js")
+    script. 
+        const socket=io();
+
+        const generar=document.querySelector('#generar button');
+
+        const tabla=document.querySelector('#generar');
+
+        const tablaCuerpo=document.querySelector('#tbody');
+
+        generar.addEventListener('click',()=>{
+            socket.emit('generar',{
+                valor: 15
+            })
+        })
+
+        socket.on('quinela', elements => {
+            tablaCuerpo.innerHTML="";
+            for(let i=0;i<elements.length;i++){
+                let tr = document.createElement("tr");
+                let td = document.createElement("td");
+                td.textContent=elements[i];
+                tr.append(td);
+                tablaCuerpo.append(tr);
+            }
+        });
+
+
+
